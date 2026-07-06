@@ -1,0 +1,31 @@
+{
+  "label_party_columns": [
+    "l_i_fea_1",
+    "l_i_fea_2",
+    "l_i_fea_3",
+    "l_i_fea_4",
+    "l_i_fea_5",
+    "l_i_fea_6",
+    "l_i_fea_7",
+    "l_i_fea_8",
+    "l_i_fea_9",
+    "l_i_fea_10",
+    "l_u_fea_1",
+    "l_u_fea_2",
+    "l_u_fea_3",
+    "l_u_fea_4",
+    "l_u_fea_5",
+    "l_u_fea_6"
+  ],
+  "non_label_party_columns": [
+    "l_c_fea",
+    "f_u_fea_1",
+    "f_u_fea_2",
+    "f_uc_fea_1",
+    "f_uc_fea_2",
+    "f_c"
+  ],
+  "label_party_feature_count": 16,
+  "non_label_party_feature_count": 6,
+  "hash_dim_per_party": 524288
+}

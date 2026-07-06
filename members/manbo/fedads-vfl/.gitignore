@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+# 安全网：防止以后误传大体积训练数据/中间产物（原始 FedAds CSV、编码后的 npy）
+sample_train_*.csv
+test.csv
+*.csv.gz
+*.npy
+data/
+raw/

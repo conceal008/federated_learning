@@ -1,0 +1,31 @@
+{
+  "vocab_sizes": [
+    6,
+    6,
+    6,
+    6,
+    4
+  ],
+  "fields": {
+    "f_u_fea_1": {
+      "cardinality": 5,
+      "test_oov_rate": 0.0
+    },
+    "f_u_fea_2": {
+      "cardinality": 5,
+      "test_oov_rate": 0.0
+    },
+    "f_uc_fea_1": {
+      "cardinality": 5,
+      "test_oov_rate": 0.0
+    },
+    "f_uc_fea_2": {
+      "cardinality": 5,
+      "test_oov_rate": 0.0
+    },
+    "f_c": {
+      "cardinality": 3,
+      "test_oov_rate": 0.0
+    }
+  }
+}

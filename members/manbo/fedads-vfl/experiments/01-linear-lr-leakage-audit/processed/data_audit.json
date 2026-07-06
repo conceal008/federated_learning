@@ -1,0 +1,18 @@
+{
+  "train": {
+    "path": "/Applications/总文件夹/汇丰/汇丰项目/FedAds/sample_train_aligned.csv",
+    "file_size_bytes": 1452988132,
+    "rows": 2598552,
+    "positives": 15391,
+    "negatives": 2583161,
+    "positive_rate": 0.0059229139921002155
+  },
+  "test": {
+    "path": "/Applications/总文件夹/汇丰/汇丰项目/FedAds/test.csv",
+    "file_size_bytes": 1359897788,
+    "rows": 2432490,
+    "positives": 15460,
+    "negatives": 2417030,
+    "positive_rate": 0.006355627361263562
+  }
+}

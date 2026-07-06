@@ -1,0 +1,115 @@
+{
+  "rows": {
+    "aligned": {
+      "n": 2598552,
+      "pos": 15391,
+      "cvr": 0.0059229139921002155
+    },
+    "test": {
+      "n": 2432490,
+      "pos": 15460,
+      "cvr": 0.006355627361263562
+    },
+    "unaligned_sampled": {
+      "n": 2000240,
+      "pos": 11780,
+      "cvr": 0.005889293284805823,
+      "scanned_total": 10424346
+    }
+  },
+  "party_A": {
+    "n_fields": 16,
+    "vocab_sizes": [
+      996136,
+      6633,
+      6,
+      193013,
+      114504,
+      10,
+      11,
+      11,
+      11,
+      11,
+      2759634,
+      4,
+      5,
+      6,
+      13,
+      387
+    ]
+  },
+  "party_B": {
+    "n_fields": 5,
+    "vocab_sizes": [
+      6,
+      6,
+      6,
+      6,
+      4
+    ]
+  },
+  "user_id_resolution": {
+    "l_u_fea_1": {
+      "aligned_card": 1782138,
+      "unaligned_card": 1444996,
+      "overlap_values": 467501,
+      "unaligned_value_coverage": 0.32353099939376995
+    },
+    "l_u_fea_2": {
+      "aligned_card": 3,
+      "unaligned_card": 3,
+      "overlap_values": 3,
+      "unaligned_value_coverage": 1.0
+    },
+    "l_u_fea_3": {
+      "aligned_card": 4,
+      "unaligned_card": 4,
+      "overlap_values": 4,
+      "unaligned_value_coverage": 1.0
+    },
+    "l_u_fea_4": {
+      "aligned_card": 5,
+      "unaligned_card": 5,
+      "overlap_values": 5,
+      "unaligned_value_coverage": 1.0
+    },
+    "l_u_fea_5": {
+      "aligned_card": 12,
+      "unaligned_card": 12,
+      "overlap_values": 12,
+      "unaligned_value_coverage": 1.0
+    },
+    "l_u_fea_6": {
+      "aligned_card": 381,
+      "unaligned_card": 375,
+      "overlap_values": 370,
+      "unaligned_value_coverage": 0.9866666666666667
+    },
+    "resolved_user_id_field": "l_u_fea_1"
+  },
+  "shared_field_check": {
+    "l_u_fea_1_vs_f_u_fea_1": {
+      "intersection": 0,
+      "jaccard": 0.0
+    },
+    "l_u_fea_1_vs_f_u_fea_2": {
+      "intersection": 0,
+      "jaccard": 0.0
+    },
+    "l_u_fea_1_vs_f_uc_fea_1": {
+      "intersection": 0,
+      "jaccard": 0.0
+    },
+    "l_u_fea_1_vs_f_uc_fea_2": {
+      "intersection": 0,
+      "jaccard": 0.0
+    },
+    "l_u_fea_1_vs_f_c": {
+      "intersection": 0,
+      "jaccard": 0.0
+    }
+  },
+  "excluded_fields": {
+    "l_c_fea": "absent from unaligned file (shared-bottom consistency would break); paper labels it conversion-event timestamp, target-leakage semantics"
+  }
+}

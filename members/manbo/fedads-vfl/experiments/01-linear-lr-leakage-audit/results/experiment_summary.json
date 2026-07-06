@@ -1,0 +1,172 @@
+{
+  "experiment_id": "fedads_initial_v2",
+  "timestamp": "2026-06-24 14:01:06",
+  "data_source": {
+    "name": "Alibaba FedAds / Tianchi dataset",
+    "local_dir": "/Applications/总文件夹/汇丰/汇丰项目/FedAds",
+    "train_file": "/Applications/总文件夹/汇丰/汇丰项目/FedAds/sample_train_aligned.csv",
+    "test_file": "/Applications/总文件夹/汇丰/汇丰项目/FedAds/test.csv",
+    "unaligned_file_present": true,
+    "license": "CC BY-NC-SA 4.0"
+  },
+  "config": {
+    "seed": 42,
+    "chunk_size": 80000,
+    "hash_dim": 524288,
+    "epochs": 2,
+    "lr": 0.35,
+    "l2": 1e-06,
+    "train_target_rows": 1000000,
+    "test_target_rows": 0,
+    "max_pos_weight": 120.0
+  },
+  "data": {
+    "train": {
+      "path": "/Applications/总文件夹/汇丰/汇丰项目/FedAds/sample_train_aligned.csv",
+      "file_size_bytes": 1452988132,
+      "rows": 2598552,
+      "positives": 15391,
+      "negatives": 2583161,
+      "positive_rate": 0.0059229139921002155
+    },
+    "test": {
+      "path": "/Applications/总文件夹/汇丰/汇丰项目/FedAds/test.csv",
+      "file_size_bytes": 1359897788,
+      "rows": 2432490,
+      "positives": 15460,
+      "negatives": 2417030,
+      "positive_rate": 0.006355627361263562
+    },
+    "feature_info": {
+      "label_party_columns": [
+        "l_i_fea_1",
+        "l_i_fea_2",
+        "l_i_fea_3",
+        "l_i_fea_4",
+        "l_i_fea_5",
+        "l_i_fea_6",
+        "l_i_fea_7",
+        "l_i_fea_8",
+        "l_i_fea_9",
+        "l_i_fea_10",
+        "l_u_fea_1",
+        "l_u_fea_2",
+        "l_u_fea_3",
+        "l_u_fea_4",
+        "l_u_fea_5",
+        "l_u_fea_6"
+      ],
+      "non_label_party_columns": [
+        "l_c_fea",
+        "f_u_fea_1",
+        "f_u_fea_2",
+        "f_uc_fea_1",
+        "f_uc_fea_2",
+        "f_c"
+      ],
+      "label_party_feature_count": 16,
+      "non_label_party_feature_count": 6,
+      "hash_dim_per_party": 524288
+    }
+  },
+  "training": {
+    "epochs": 2,
+    "batches": 66,
+    "sampled_rows_total": 1998890,
+    "sampled_positives_total": 11863,
+    "sampled_positive_rate": 0.005934793810564863,
+    "elapsed_sec": 21.151,
+    "pos_weight": 84.41790656877396,
+    "neg_weight": 0.5029791019607373,
+    "centralized_training_path": "independent sparse.hstack([XA, XB]) + update_binary",
+    "vfl_training_path": "two-party split update with XA @ wA + XB @ wB",
+    "epoch_summaries": [
+      {
+        "epoch": 1,
+        "sampled_rows": 1000480,
+        "sampled_positives": 5986,
+        "sampled_positive_rate": 0.0059831280985127135
+      },
+      {
+        "epoch": 2,
+        "sampled_rows": 998410,
+        "sampled_positives": 5877,
+        "sampled_positive_rate": 0.005886359311304975
+      }
+    ]
+  },
+  "evaluation": {
+    "sampled_rows": 2432490,
+    "sampled_positives": 15460,
+    "sampled_positive_rate": 0.006355627361263562,
+    "elapsed_sec": 15.077
+  },
+  "metrics": [
+    {
+      "model": "Label-only",
+      "AUC": 0.5794066571009371,
+      "PR_AUC": 0.00829444126713049,
+      "Logloss": 0.6799089020471071,
+      "Lift_1pct": 1.7334986950376863,
+      "Lift_5pct": 1.552386891078525,
+      "Lift_10pct": 1.5032341526520052,
+      "Capture_1pct": 0.017335058214747737,
+      "Capture_5pct": 0.07761966364812418,
+      "Capture_10pct": 0.15032341526520052
+    },
+    {
+      "model": "Non-label-only",
+      "AUC": 0.5627239662787584,
+      "PR_AUC": 0.007549416781497767,
+      "Logloss": 0.6891926923772826,
+      "Lift_1pct": 1.2613143490013015,
+      "Lift_5pct": 1.3518702509808822,
+      "Lift_10pct": 1.3111254851228977,
+      "Capture_1pct": 0.012613195342820181,
+      "Capture_5pct": 0.06759379042690815,
+      "Capture_10pct": 0.1311125485122898
+    },
+    {
+      "model": "Centralized",
+      "AUC": 0.6129672670910054,
+      "PR_AUC": 0.00976092226142488,
+      "Logloss": 0.670919711436588,
+      "Lift_1pct": 2.3867948450332324,
+      "Lift_5pct": 2.0465633847385223,
+      "Lift_10pct": 1.9068564036222508,
+      "Capture_1pct": 0.02386804657179819,
+      "Capture_5pct": 0.10232858990944373,
+      "Capture_10pct": 0.1906856403622251
+    },
+    {
+      "model": "VFL",
+      "AUC": 0.6129672670910054,
+      "PR_AUC": 0.00976092226142488,
+      "Logloss": 0.6709197114365882,
+      "Lift_1pct": 2.3867948450332324,
+      "Lift_5pct": 2.0465633847385223,
+      "Lift_10pct": 1.9068564036222508,
+      "Capture_1pct": 0.02386804657179819,
+      "Capture_5pct": 0.10232858990944373,
+      "Capture_10pct": 0.1906856403622251
+    }
+  ],
+  "equivalence": {
+    "max_weight_A_diff": 2.220446049250313e-16,
+    "max_weight_B_diff": 6.661338147750939e-16,
+    "bias_diff": 1.7763568394002505e-15,
+    "max_probability_diff": 6.106226635438361e-16
+  },
+  "privacy_and_communication": {
+    "plaintext_MB": 31.98224,
+    "description": "线性 VFL 每轮/每样本 B→A 发送一个 partial logit，A→B 返回一个 residual；此处仅估算明文协议通信量，未声称生产安全。"
+  },
+  "artifacts": {
+    "metrics_summary": "/Applications/总文件夹/汇丰/汇丰项目/vfl_fedads/outputs/fedads_initial_v2/results/metrics_summary.csv",
+    "predictions_sample": "/Applications/总文件夹/汇丰/汇丰项目/vfl_fedads/outputs/fedads_initial_v2/results/test_predictions_sample.csv.gz",
+    "figures": "/Applications/总文件夹/汇丰/汇丰项目/vfl_fedads/outputs/fedads_initial_v2/results/figures",
+    "leakage_audit": "/Applications/总文件夹/汇丰/汇丰项目/vfl_fedads/outputs/fedads_initial_v2/processed/leakage_audit.json",
+    "report": "/Applications/总文件夹/汇丰/汇丰项目/vfl_fedads/outputs/fedads_initial_v2/report/FedAds_VFL初步可行性验证报告.md"
+  },
+  "elapsed_total_sec": 53.718
+}

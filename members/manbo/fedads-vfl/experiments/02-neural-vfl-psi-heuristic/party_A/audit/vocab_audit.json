@@ -1,0 +1,86 @@
+{
+  "vocab_sizes": [
+    996136,
+    6633,
+    6,
+    193013,
+    114504,
+    10,
+    11,
+    11,
+    11,
+    11,
+    2759634,
+    4,
+    5,
+    6,
+    13,
+    387
+  ],
+  "fields": {
+    "l_i_fea_1": {
+      "cardinality": 996135,
+      "test_oov_rate": 0.24956813799851182
+    },
+    "l_i_fea_2": {
+      "cardinality": 6632,
+      "test_oov_rate": 0.00030955934042894317
+    },
+    "l_i_fea_3": {
+      "cardinality": 5,
+      "test_oov_rate": 0.0
+    },
+    "l_i_fea_4": {
+      "cardinality": 193012,
+      "test_oov_rate": 0.036531702083050704
+    },
+    "l_i_fea_5": {
+      "cardinality": 114503,
+      "test_oov_rate": 0.01757869508199417
+    },
+    "l_i_fea_6": {
+      "cardinality": 9,
+      "test_oov_rate": 0.0
+    },
+    "l_i_fea_7": {
+      "cardinality": 10,
+      "test_oov_rate": 0.0
+    },
+    "l_i_fea_8": {
+      "cardinality": 10,
+      "test_oov_rate": 0.0
+    },
+    "l_i_fea_9": {
+      "cardinality": 10,
+      "test_oov_rate": 0.0
+    },
+    "l_i_fea_10": {
+      "cardinality": 10,
+      "test_oov_rate": 0.0
+    },
+    "l_u_fea_1": {
+      "cardinality": 2759633,
+      "test_oov_rate": 0.6512343318985895
+    },
+    "l_u_fea_2": {
+      "cardinality": 3,
+      "test_oov_rate": 0.0
+    },
+    "l_u_fea_3": {
+      "cardinality": 4,
+      "test_oov_rate": 0.0
+    },
+    "l_u_fea_4": {
+      "cardinality": 5,
+      "test_oov_rate": 0.0
+    },
+    "l_u_fea_5": {
+      "cardinality": 12,
+      "test_oov_rate": 0.0
+    },
+    "l_u_fea_6": {
+      "cardinality": 386,
+      "test_oov_rate": 2.4666082902704636e-06
+    }
+  }
+}

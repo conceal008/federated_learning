@@ -1,0 +1,28 @@
+{
+  "protocol": "salted HMAC-SHA256 set intersection (functional PSI)",
+  "salt_derivation": "sha256('fedads_full_v3_psi_salt_seed42'), 正式部署应改为 DH 协商",
+  "aligned": {
+    "party_A_size": 2598552,
+    "party_B_size": 2598552,
+    "intersection": 2515289,
+    "hash_seconds_A": 2.97,
+    "hash_seconds_B": 2.87,
+    "intersect_seconds": 1.3,
+    "bytes_exchanged": 166307328
+  },
+  "test": {
+    "party_A_size": 2432490,
+    "party_B_size": 2432490,
+    "intersection": 2430967,
+    "hash_seconds_A": 2.7,
+    "hash_seconds_B": 2.71,
+    "intersect_seconds": 1.27,
+    "bytes_exchanged": 155679360
+  },
+  "joint_modelable_coverage": {
+    "aligned": 2515289,
+    "label_party_total_samples": 12939635,
+    "coverage": 0.19438639497945653,
+    "note": "标签方全部样本中可与 B 方联合建模的比例；未对齐样本经 Phase 4 增强后仍可参与训练"
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "timestamp": "2026-06-24 13:58:19",
+  "schema": {
+    "feature_overlap_with_id_or_label": [],
+    "party_feature_overlap": [],
+    "columns": {
+      "sample_train_aligned.csv": [
+        "sample_id",
+        "label",
+        "l_i_fea_1",
+        "l_i_fea_2",
+        "l_i_fea_3",
+        "l_i_fea_4",
+        "l_i_fea_5",
+        "l_i_fea_6",
+        "l_i_fea_7",
+        "l_i_fea_8",
+        "l_i_fea_9",
+        "l_i_fea_10",
+        "l_u_fea_1",
+        "l_u_fea_2",
+        "l_u_fea_3",
+        "l_u_fea_4",
+        "l_u_fea_5",
+        "l_u_fea_6",
+        "l_c_fea",
+        "f_u_fea_1",
+        "f_u_fea_2",
+        "f_uc_fea_1",
+        "f_uc_fea_2",
+        "f_c"
+      ],
+      "test.csv": [
+        "sample_id",
+        "label",
+        "l_i_fea_1",
+        "l_i_fea_2",
+        "l_i_fea_3",
+        "l_i_fea_4",
+        "l_i_fea_5",
+        "l_i_fea_6",
+        "l_i_fea_7",
+        "l_i_fea_8",
+        "l_i_fea_9",
+        "l_i_fea_10",
+        "l_u_fea_1",
+        "l_u_fea_2",
+        "l_u_fea_3",
+        "l_u_fea_4",
+        "l_u_fea_5",
+        "l_u_fea_6",
+        "l_c_fea",
+        "f_u_fea_1",
+        "f_u_fea_2",
+        "f_uc_fea_1",
+        "f_uc_fea_2",
+        "f_c"
+      ],
+      "sample_train_unaligned.csv": [
+        "sample_id",
+        "label",
+        "l_i_fea_1",
+        "l_i_fea_2",
+        "l_i_fea_3",
+        "l_i_fea_4",
+        "l_i_fea_5",
+        "l_i_fea_6",
+        "l_i_fea_7",
+        "l_i_fea_8",
+        "l_i_fea_9",
+        "l_i_fea_10",
+        "l_u_fea_1",
+        "l_u_fea_2",
+        "l_u_fea_3",
+        "l_u_fea_4",
+        "l_u_fea_5",
+        "l_u_fea_6"
+      ]
+    },
+    "official_interpretation_note": "FedAds 官方文档说明 aligned train/test 已完成 sample join，包含 label party 与 non-label party 特征；unaligned train 只有 label party 特征。"
+  },
+  "id_stats": {
+    "sample_train_aligned.csv": {
+      "rows": 2598552,
+      "unique_sample_ids": 2515289,
+      "duplicate_sample_id_rows": 83263,
+      "duplicate_rate": 0.03204207574064325
+    },
+    "test.csv": {
+      "rows": 2432490,
+      "unique_sample_ids": 2430967,
+      "duplicate_sample_id_rows": 1523,
+      "duplicate_rate": 0.000626107404346986
+    },
+    "sample_train_unaligned.csv": {
+      "rows": 10424346,
+      "unique_sample_ids": 9117963,
+      "duplicate_sample_id_rows": 1306383,
+      "duplicate_rate": 0.12532037981087735
+    }
+  },
+  "id_overlap": {
+    "train_test_sample_id_intersection": 0,
+    "aligned_unaligned_sample_id_intersection": 637475,
+    "test_unaligned_sample_id_intersection": 0,
+    "interpretation": "train/test 无交集是关键泄漏检查；aligned 与 unaligned 有交集不影响本次实验，因为 unaligned 未参与训练。"
+  },
+  "single_field_probe": {
+    "sample_rows_train": 300000,
+    "sample_rows_test": 300000,
+    "fields": [
+      {
+        "field": "l_i_fea_6",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 9,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5765857143135227
+      },
+      {
+        "field": "l_i_fea_2",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 4425,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5610963610199129
+      },
+      {
+        "field": "f_c",
+        "party_used_in_experiment": "non_label_party",
+        "sample_unique_values": 3,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5603614172334397
+      },
+      {
+        "field": "l_i_fea_1",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 175099,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5408611917080857
+      },
+      {
+        "field": "l_i_fea_4",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 69322,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5391143444118598
+      },
+      {
+        "field": "l_i_fea_5",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 43722,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5351603700151366
+      },
+      {
+        "field": "l_u_fea_5",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 12,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5306253614616286
+      },
+      {
+        "field": "l_u_fea_6",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 355,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.525348302093417
+      },
+      {
+        "field": "l_i_fea_3",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 5,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.521485981857632
+      },
+      {
+        "field": "l_u_fea_2",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 3,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.517292139604706
+      },
+      {
+        "field": "f_uc_fea_2",
+        "party_used_in_experiment": "non_label_party",
+        "sample_unique_values": 5,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5164949385403881
+      },
+      {
+        "field": "f_u_fea_2",
+        "party_used_in_experiment": "non_label_party",
+        "sample_unique_values": 5,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.51643455005729
+      },
+      {
+        "field": "l_u_fea_3",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 4,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5150489283028374
+      },
+      {
+        "field": "f_u_fea_1",
+        "party_used_in_experiment": "non_label_party",
+        "sample_unique_values": 5,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.511389759443313
+      },
+      {
+        "field": "f_uc_fea_1",
+        "party_used_in_experiment": "non_label_party",
+        "sample_unique_values": 5,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5110608615179242
+      },
+      {
+        "field": "l_u_fea_4",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 5,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5105403488126923
+      },
+      {
+        "field": "l_i_fea_9",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 10,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.510099329534336
+      },
+      {
+        "field": "l_i_fea_8",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 10,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5092156808834079
+      },
+      {
+        "field": "l_i_fea_7",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 10,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5083137775631758
+      },
+      {
+        "field": "l_u_fea_1",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 273244,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.507355965982682
+      },
+      {
+        "field": "l_i_fea_10",
+        "party_used_in_experiment": "label_party",
+        "sample_unique_values": 10,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5051170558032821
+      },
+      {
+        "field": "l_c_fea",
+        "party_used_in_experiment": "non_label_party",
+        "sample_unique_values": 1,
+        "same_as_label_rate": 0.0,
+        "label_like_value_count": 0,
+        "single_field_target_encoding_auc_on_test_sample": 0.5
+      }
+    ]
+  },
+  "conclusion": {
+    "has_direct_label_or_id_feature_leakage": false,
+    "has_train_test_id_overlap": false,
+    "max_single_field_target_encoding_auc_on_300k_probe": 0.5765857143135227,
+    "leakage_risk_level": "low",
+    "note": "抽样单字段探针没有发现接近标签泄漏的字段；最高单字段 AUC 远低于 0.9。重复 sample_id 存在于同一文件内部，但训练测试 sample_id 无交集。"
+  },
+  "elapsed_sec": 48.026
+}

@@ -1,0 +1,68 @@
+{
+  "experiment_id": "fedads_full_v3",
+  "freeze_time": "2026-07-02T19:15:00+08:00",
+  "data": {
+    "aligned_train": "../FedAds/sample_train_aligned.csv",
+    "unaligned_train": "../FedAds/sample_train_unaligned.csv",
+    "test": "../FedAds/test.csv",
+    "aligned_rows_expected": 2598552,
+    "unaligned_rows_expected": 10424346,
+    "test_rows_expected": 2432490,
+    "checksums": "data_checksums.sha256",
+    "dedup": "none (official benchmark protocol; duplicates kept, train/test sample_id intersection verified 0 in v2)",
+    "split": "official time-based split: test.csv = last week's click events; no re-splitting"
+  },
+  "features": {
+    "label_party_fields": ["l_i_fea_1","l_i_fea_2","l_i_fea_3","l_i_fea_4","l_i_fea_5","l_i_fea_6","l_i_fea_7","l_i_fea_8","l_i_fea_9","l_i_fea_10","l_u_fea_1","l_u_fea_2","l_u_fea_3","l_u_fea_4","l_u_fea_5","l_u_fea_6"],
+    "non_label_party_fields": ["f_u_fea_1","f_u_fea_2","f_uc_fea_1","f_uc_fea_2","f_c"],
+    "excluded_fields": {
+      "l_c_fea": "absent from unaligned file (shared-bottom consistency would break); paper labels it conversion-event timestamp, target-leakage semantics"
+    },
+    "vocab": "built per-party locally; label party vocab from aligned train + unaligned sample; non-label party vocab from aligned train; index 0 reserved for OOV/UNK; min_count 1"
+  },
+  "sampling": {
+    "aligned_train": "full 2,598,552 rows",
+    "unaligned_train": "random sample target 2,000,000 rows, rate 2000000/10424346 per chunk, numpy PCG64 seed 42",
+    "test": "full 2,432,490 rows"
+  },
+  "model": {
+    "backbone": "paper VanillaVFL protocol (SIGIR23 sec 5.1.4), numpy reimplementation",
+    "embedding_dim": 8,
+    "non_label_submodel": [128, 32],
+    "label_bottom": [256, 128],
+    "top": "single logistic layer on concat [h_N(32); h_L(128)]",
+    "activation": "relu",
+    "batch_norm": "omitted (documented simplification vs paper)",
+    "batch_size": 256,
+    "epochs": 1,
+    "optimizer": "Adam lr=1e-3 beta=(0.9,0.999) eps=1e-8, lazy update for embedding tables",
+    "class_rebalancing": "none (paper protocol; preserves calibration, NLL reported on raw probabilities)",
+    "seed": 42
+  },
+  "phase4_enhancement": {
+    "method": "HeuristicVFL + alternative training (paper Algorithm 1)",
+    "synthesized_embedding": "per-user average of aligned h_N from pretrained VanillaVFL; fallback global mean h_N for unseen users",
+    "user_id_field": "resolved in phase1 audit: highest-cardinality l_u field with aligned/unaligned overlap",
+    "aligned_batch_prob": "p = |D_aligned| / (|D_aligned| + |D_unaligned_sampled|)",
+    "online_inference": "federated branch only"
+  },
+  "phase5_privacy": {
+    "attacks": ["gradient-norm (cut-layer ||g||_2 as score)", "federated-embedding clustering (2-means, smaller cluster = positive)"],
+    "defenses": {
+      "MixPro": {"alpha": 0.6, "lambda": "Beta(0.6,0.6) folded to >0.5", "phi_goal": 0.8660254037844387},
+      "DP_gaussian": {"clip": "per-sample L2 clip at batch median norm", "noise_multiplier": 1.0}
+    },
+    "metric": "DeltaLeakAUC = (LeakAUC_exp - LeakAUC_base) / LeakAUC_base; utility = test AUC"
+  },
+  "evaluation": {
+    "metrics": ["AUC", "PR_AUC", "NLL", "KS", "Lift@1/5/10%", "Capture@1/5/10/20%"],
+    "bootstrap": {"iterations": 200, "unit": "test-set resample with replacement", "ci": 0.95, "seed": 42},
+    "value_quantification": {
+      "primary": "fixed-budget incremental captured conversions: DeltaCapture@K x total test conversions (test window = 1 week), annualized x52",
+      "conversion_value_sensitivity": "V in {50, 100, 200, 500} CNY per conversion, declared assumption",
+      "net_value": "incremental value minus communication + defense utility cost (both measured)"
+    }
+  },
+  "paper_anchors": {"Local": 0.609, "VanillaVFL": 0.620, "HeuristicVFL": 0.630, "DiffuAT": 0.645, "ORALE": 0.658, "MixPro_DeltaLeakAUC": -0.113, "MixPro_AUC": 0.602},
+  "license": "CC BY-NC-SA 4.0, non-commercial research use only"
+}

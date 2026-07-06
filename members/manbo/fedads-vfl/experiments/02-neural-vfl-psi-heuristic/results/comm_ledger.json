@@ -1,0 +1,9 @@
+{
+  "psi_bytes": 321986688,
+  "vfl_train_bytes": 665229312,
+  "vfl_train_steps": 10151,
+  "vfl_train_per_step_bytes": 65533,
+  "vfl_test_inference_bytes": 311358720,
+  "exchanged_content": "前向 h_N[batch,32] float32 (B→A)；反向 dL/dh_N[batch,32] float32 (A→B)",
+  "note": "明文中间量通信；正式方案需在此链路上叠加 HE/扰动，Phase 5 给出扰动版本"
+}
